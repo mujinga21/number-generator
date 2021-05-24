@@ -26,14 +26,9 @@ while (!uppers && !lowers &&! number && !symbol ){
 
 }
 window.addEventListener('load', function () {
-  generateNewPassword();
+  generatePassword();
 
 });
-var hasLower = lowercaseEl.checked;
-var hasUpper = uppercaseEl.checked;
-var hasNumber = numberEl.checked;
-var hasSymbol = symbolEl.checked;
-
 
 
 var SelectFunc = {
@@ -43,6 +38,10 @@ var SelectFunc = {
   Symbol: randomCharacter
   
 }
+
+function generatePassword() {
+  var password = "";
+  var allowed = {};
 
 
 //generator functions
@@ -58,6 +57,9 @@ function randomNumber (){
 function randomCharacter (){
   const characters = '!@#$%^&*()_+~`|}{[]\:'
   return characters[Math.floor(Math.random()* characters.length)];
+  
+}
+
 }
 
 
@@ -69,4 +71,3 @@ function randomCharacter (){
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
